@@ -1,0 +1,39 @@
+<serena>
+	<service>
+		<UOC_Accesso>
+			<uoc_paziente_glo>
+				<GLO_Paziente>
+					<ID>1</ID>
+					<glo_cognome>FRASCARI</glo_cognome>
+					<glo_nome>ANDREA</glo_nome>
+					<glo_codice_fiscale>FRSNDR70P23A944M</glo_codice_fiscale>
+					<glo_sesso>maschio</glo_sesso>
+					<glo_data_nascita>23/09/1970</glo_data_nascita>
+					<glo_luogo_nascita>Bologna</glo_luogo_nascita>
+					<glo_indirizzo>Via C.PAvese 33</glo_indirizzo>
+					<glo_comune>Bologna</glo_comune>
+					<glo_nazionalita>Italia</glo_nazionalita>
+					<glo_telefono>051 471976</glo_telefono>
+					<glo_email>ciao@com</glo_email>
+					<creation_user>admin</creation_user>
+					<creation_date>03/10/2015</creation_date>
+					<deletion_user></deletion_user>
+					<deletion_date></deletion_date>
+					<last_modification_user>admin</last_modification_user>
+					<last_modification_date>04/10/2015</last_modification_date>
+					<activation_flag>true</activation_flag>
+					<deletion_flag>false</deletion_flag>
+				</GLO_Paziente>
+			</uoc_paziente_glo>
+			<numero_cartella>1</numero_cartella>
+			<uoc_data_ingresso>03/10/2015</uoc_data_ingresso>
+			<diario_clinico>
+				<UOC_Diario_Clinico>
+					<data>21/03/2016</data>
+					<osservazione>bene bene</osservazione>
+					<creation_user>acolonna</creation_user>
+				</UOC_Diario_Clinico>
+			</diario_clinico>
+		</UOC_Accesso>
+	</service>
+</serena>

@@ -1,0 +1,98 @@
+@BEGIN_TEMPLATE@
+	<h2 style="text-align:center">Statistiche</h1>
+<h4 style="text-align:center">Dal tasto menu sulla destra le opzioni di stampa/esportazione</h4>
+	
+<script type="text/javascript">
+
+$(function () {
+	var theURl = "ModuleIndex?q=antonianoinsieme/all_stats";
+	$.ajax({
+		type: "GET",
+		url: theURl,
+		data: {year: @FUN_GET_URL_PARAM(param=y)@, query:"@FUN_GET_URL_PARAM(param=s)@"},
+        async: false,        
+        cache: false,
+        dataType: "json",
+        error: function(data){ $('#myPleaseWait').modal('hide'); $("#error-message").show();},
+        success: function(data){  
+        	$("#error-message").hide(); 
+        	$('#myPleaseWait').modal('hide');
+
+		$('#container').highcharts({
+		        chart: {
+		            type: 'column'
+		        },
+		        title: {
+		            text: data.title
+		        },
+		        xAxis: {
+		            categories: ['Gen','Feb','Mar','Apr','Mag','Giu','Lug','Ago','Set','Ott','Nov','Dic',]
+		        },
+		        yAxis: {
+		            min: 0,
+		            title: {
+		                text: data.asseY
+		            },
+		            stackLabels: {
+		                enabled: true,
+		                style: {
+		                    fontWeight: 'bold',
+		                    color: (Highcharts.theme && Highcharts.theme.textColor) || 'gray'
+		                }
+		            }
+		        },
+		        legend: {
+		            align: 'right',
+		            x: -30,
+		            verticalAlign: 'top',
+		            y: 25,
+		            floating: true,
+		            backgroundColor: (Highcharts.theme && Highcharts.theme.background2) || 'white',
+		            borderColor: '#CCC',
+		            borderWidth: 1,
+		            shadow: false
+		        },
+		        tooltip: {
+		            headerFormat: '<b>{point.x}</b><br/>',
+		            pointFormat: '{series.name}: {point.y}<br/>Total: {point.stackTotal}'
+		        },
+		        plotOptions: {
+		            column: {
+		                stacking: 'normal',
+		                dataLabels: {
+		                    enabled: true,
+		                    color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white',
+		                    style: {
+		                        textShadow: '0 0 3px black'
+		                    }
+		                }
+		            }
+		        },
+		        series: data.data
+		    });
+        }
+});
+	
+});
+</script>
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+
+
+
+<div class="btn-group btn-group-justified" role="group"
+	aria-label="Anni">
+	<a href="?q=object/filter&p=GLO_Paziente&t=stat-years&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">Anni</a> 
+	<a href="?q=object/filter&p=GLO_Paziente&t=stat&y=2015&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2015</a>
+	<a href="?q=object/filter&p=GLO_Paziente&t=stat&y=2016&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2016</a>
+	<a href="?q=object/filter&p=GLO_Paziente&t=stat&y=2017&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2017</a>
+	<a href="?q=object/filter&p=GLO_Paziente&t=stat&y=2018&s=@FUN_GET_URL_PARAM(param=s)@" class="btn btn-default" role="button">2018</a>
+</div>
+<div id="container"
+	style="min-width: 310px; height: 400px; margin: 0 auto">
+</div>
+
+
+@END_TEMPLATE@

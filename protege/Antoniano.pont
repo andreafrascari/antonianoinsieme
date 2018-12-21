@@ -1,0 +1,1936 @@
+; Tue May 03 16:57:16 CEST 2016
+; 
+;+ (version "3.5")
+;+ (build "Build 660")
+
+
+(defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
+	(is-a USER)
+	(role abstract)
+	(single-slot obiettivo_raggiunto
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_relazione_con_pari
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot accesso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot prosposta_osservazione)
+		(create-accessor read-write))
+	(multislot inverse_of_firma1_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(inverse-slot firma1_percorso)
+		(create-accessor read-write))
+	(single-slot madre_scolarita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_iniziato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ritmo_sonno_veglia
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ref_class
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_prenotazione
+		(type SYMBOL)
+		(allowed-values intervento reinoculo controllo)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_abilita_grossomotorie
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_comparsa_sorriso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Anamnesi)
+;+		(cardinality 0 1)
+;+		(inverse-slot uoc_accesso_anamnesi)
+		(create-accessor read-write))
+	(single-slot percettivo_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_codice_fiscale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot glo_accesso_uoc
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(inverse-slot uoc_paziente_glo)
+		(create-accessor read-write))
+	(single-slot percorso_scolastico_pregresso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_terapia_farmacologica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot gratuita
+		(type SYMBOL)
+		(allowed-values totale 40 60)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot supporto
+		(type SYMBOL)
+		(allowed-values documento audio video foto)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot scolarita
+		(type INSTANCE)
+;+		(allowed-classes UOC_Scolarita)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_scolarita)
+		(create-accessor read-write))
+	(single-slot glo_scolarita_scuola
+		(type SYMBOL)
+		(allowed-values nido materna elementare media_inferiore media_superiore altro)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_vocalizzo_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_durata_gravidanza
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot di_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(cardinality 1 1)
+;+		(inverse-slot icf)
+		(create-accessor read-write))
+	(single-slot stato_civile_genitori
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_scende_scale_come
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma4_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma4_percorso)
+		(create-accessor read-write))
+	(single-slot icd10
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_dati_personali
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_capo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot controllo_sfinterico
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot uoc_allegati
+		(type INSTANCE)
+;+		(allowed-classes UOC_Allegato)
+;+		(inverse-slot di_cartella)
+		(create-accessor read-write))
+	(single-slot linguaggio_comprensione_richieste_semplici
+		(type SYMBOL)
+		(allowed-values buona sufficiente scarsa)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_fisiologica
+;+		(comment "da fare sezione")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_comprensibile_estranei
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma3_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma3_percorso)
+		(create-accessor read-write))
+	(single-slot sintesi_referto_valutazione_esterna
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_anno_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_risultati_ottenuti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot osservazione0_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_cammino
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_consenso_riprese
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_peso_alla_nascita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sezione_padre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot valutazione_esterna
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_scolarita_classe
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inviante_e_emotivazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot attachment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot priorita
+		(type SYMBOL)
+		(allowed-values urgente programmata)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_appuntamento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+;+		(inverse-slot uoc_allegati)
+		(create-accessor read-write))
+	(single-slot glo_scolarita_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot Antoniano_Class66
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_familiare
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_psicomotorio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_patologie_accertate
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_stazione_eretta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot problemi_clinici
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot motivazioneChiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_note_parto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ref_instance
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_diario_clinico
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot diario_clinico)
+		(create-accessor read-write))
+	(single-slot uoc_diagnosi_principale_codice
+		(type SYMBOL)
+		(allowed-values Ritardo_mentale_F70-79 Disturbo_specifico_apprendimento_F81 Disturbo_specifico_linguaggio_F80 Sindrome_di_down_Q90 Ritardo_psicomotorio_F82 Disturbo_coordinazione_F82 Altro Disturbi_evolutivi_globali_F84 Non_diagnosticato)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot madre_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot numero_cartella
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_data_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_presidi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_esposto_a_bilinguismo
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sezione_sviluppo_sociale_relazionale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot performance
+		(type SYMBOL)
+		(allowed-values 0 1 2 3 4 8 9)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_diagnosi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+;+		(inverse-slot uoc_diagnosi)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_anamnesi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot uoc_anamnesi)
+		(create-accessor read-write))
+	(multislot uoc_parto
+		(type SYMBOL)
+		(allowed-values eutocico distocico dopo_gravidanza cesareo_urgenza cesareo_programmato indotto spontaneo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot uoc_data_ingresso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_spostamento_al_tappeto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot percettivo_visivo_riconosce
+		(type SYMBOL)
+		(allowed-values visi luoghi giochi dislivelli pendenze)
+		(create-accessor read-write))
+	(single-slot insegnati_riferimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_agapar_5_minuto
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot data_richiesta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_per_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Lista_Attesa)
+;+		(cardinality 0 1)
+;+		(inverse-slot per_percorso)
+		(create-accessor read-write))
+	(single-slot cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot trattamenti)
+		(create-accessor read-write))
+	(single-slot linguaggio_prime_parole_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_percettivo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot icf
+		(type INSTANCE)
+;+		(allowed-classes UOC_Eval_Icf)
+;+		(inverse-slot di_percorso)
+		(create-accessor read-write))
+	(single-slot uoc_paziente_glo
+		(type INSTANCE)
+;+		(allowed-classes GLO_Paziente)
+;+		(cardinality 0 1)
+;+		(inverse-slot glo_accesso_uoc)
+		(create-accessor read-write))
+	(single-slot real_attachment_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot real_attachment_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot real_attachment_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_autoregolazione_comportamentale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_consolabilita_primi_anni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_parole_rispetto_coetanei
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot pediatra_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_nazionalita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_utilizzo_materiale_iconico
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_patologie_uditive_accertate
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma2_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(inverse-slot firma2_percorso)
+		(create-accessor read-write))
+	(single-slot sezione_madre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_relazione_con_adulti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_riabilitativo_precedente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_amministrativa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot miglioramento
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot referto_valutazione_esterna
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot obiettivo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_lallazione_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot refertazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot capacita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_percorsi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(inverse-slot uoc_accesso_percorso)
+		(create-accessor read-write))
+	(single-slot firma_accettazione_il
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_incontro_professionisti_sanita
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot glo_luogo_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_user_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma2_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma2_percorso)
+		(create-accessor read-write))
+	(single-slot inviante_AUSL_bologna
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot prosposta_osservazione
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(cardinality 0 1)
+;+		(inverse-slot accesso)
+		(create-accessor read-write))
+	(single-slot uoc_agapar_1_minuto
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_seduto_senza_appoggio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tipo_percorso
+		(type SYMBOL)
+		(allowed-values logopedico musicoterapico neuropsicomotorio psicologico educativo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot referente_asl_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_phone_number
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_visita
+		(type SYMBOL)
+		(allowed-values logopedica psicomotoria fisioterapica intervento_educativo neuropsicologica percorsi_autonomia psicologica neuropischiatrica)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma4_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(inverse-slot firma4_percorso)
+		(create-accessor read-write))
+	(single-slot linguaggio_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot relazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot individuale_gruppo
+		(type SYMBOL)
+		(allowed-values individuale di_gruppo)
+		(default individuale)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot altri_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ore_settimanali_a_pagamento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_patologica
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot diagnosi_principale_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comorbidita_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comorbidita_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_scende_scale
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot item
+		(type SYMBOL)
+		(allowed-values d4500_Camminare_per_meno_di_un_km d4501_Camminare_per_piu_di_un_km%00 Camminare Interazioni_interpersonali_complesse%00 D7202_Regolare_comportamenti_nelle_relazioni%00)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_esami
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_presidi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_gravidanza
+		(type SYMBOL)
+		(allowed-values normale patologica)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot firma1_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma1_percorso)
+		(create-accessor read-write))
+	(single-slot percorso_scolastico_attuale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_presenza_gesti_significativi
+		(type SYMBOL)
+		(allowed-values buona sufficiente scarsa)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_percorso_scolastico
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_visite
+		(type INSTANCE)
+;+		(allowed-classes UOC_Visita)
+;+		(inverse-slot per_cartella)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+;+		(inverse-slot uoc_percorsi)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_scolarita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_data_fine
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma3
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma3)
+		(create-accessor read-write))
+	(single-slot firma4
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma4)
+		(create-accessor read-write))
+	(single-slot firma1
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma1)
+		(create-accessor read-write))
+	(single-slot firma2
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_firma2)
+		(create-accessor read-write))
+	(single-slot titolo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_ingresso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_data_inizio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_sesso
+		(type SYMBOL)
+		(allowed-values maschio femmina)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot per_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(cardinality 0 1)
+;+		(inverse-slot inverse_of_per_percorso)
+		(create-accessor read-write))
+	(single-slot stato
+		(type SYMBOL)
+		(allowed-values presente assente)
+		(default presente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_stato
+		(type SYMBOL)
+		(allowed-values in_attesa intervento_eseguito percorso_concluso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_scolarita
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot scolarita)
+		(create-accessor read-write))
+	(multislot interventi_proposti
+		(type SYMBOL)
+		(allowed-values neuropsicologico psicologico fisioterapico logopedico musicoterapico psicomotorio educativo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(multislot inverse_of_firma1
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(inverse-slot firma1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma2
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(inverse-slot firma2)
+		(create-accessor read-write))
+	(single-slot certificazioni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma3
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(inverse-slot firma3)
+		(create-accessor read-write))
+	(single-slot linguaggio_tipo_gesti_significativi
+		(type SYMBOL)
+		(allowed-values deiettico referenziale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma4
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(inverse-slot firma4)
+		(create-accessor read-write))
+	(single-slot alimentazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot menomazione
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot controllo_sfinterico_da_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ore_settimanali
+		(type SYMBOL)
+		(allowed-values 1 2 3 piu_di_tre)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma3_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(inverse-slot firma3_percorso)
+		(create-accessor read-write))
+	(single-slot data_consenso_dati_peronali
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_tattile_gustativo_olfattivo_problematiche
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_incontro_scuola
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot trattamenti
+		(type INSTANCE)
+;+		(allowed-classes UOC_Trattamento)
+;+		(inverse-slot cartella)
+		(create-accessor read-write))
+	(single-slot percettivo_esami_audiometrici
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_riabilitativo_attuale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot per_cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+;+		(inverse-slot uoc_visite)
+		(create-accessor read-write))
+	(multislot diario_clinico
+		(type INSTANCE)
+;+		(allowed-classes UOC_Diario_Clinico)
+;+		(inverse-slot inverse_of_diario_clinico)
+		(create-accessor read-write))
+	(single-slot descrizione_breve
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_cognome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_parola_frase
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot metadati
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_gioco
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_modalita_separazione_caregiver
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_linguaggio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_riprese
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot padre_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_anno_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dataChiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot fratelli_e_altri_conviventi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_diagnosi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Diagnosi)
+;+		(cardinality 0 1)
+;+		(inverse-slot uoc_accesso_diagnosi)
+		(create-accessor read-write))
+	(single-slot osservazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot iter_visita
+		(type SYMBOL)
+		(allowed-values trattamento valutazione)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass GLO_Paziente
+	(is-a USER)
+	(role concrete)
+	(single-slot glo_nazionalita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_indirizzo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_telefono
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_comune
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_cognome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_foto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_luogo_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_data_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_sesso
+		(type SYMBOL)
+		(allowed-values maschio femmina)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot glo_codice_fiscale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot glo_accesso_uoc
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+		(create-accessor read-write)))
+
+(defclass UOC_Accesso
+	(is-a USER)
+	(role concrete)
+	(single-slot inviante_e_emotivazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot consenso_dati_personali
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot percorso_riabilitativo_attuale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_data_ingresso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot diario_clinico
+		(type INSTANCE)
+;+		(allowed-classes UOC_Diario_Clinico)
+		(create-accessor read-write))
+	(single-slot sezione_madre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_riabilitativo_precedente
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_scolarita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot altri_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_allegati
+		(type INSTANCE)
+;+		(allowed-classes UOC_Allegato)
+		(create-accessor read-write))
+	(single-slot ore_settimanali_a_pagamento
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_amministrativa
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_professione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Anamnesi)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_riprese
+		(type SYMBOL)
+		(allowed-values si no)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot padre_anno_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot motivazioneChiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot certificazioni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_anno_nascita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot gratuita
+		(type SYMBOL)
+		(allowed-values totale 40 60)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot scolarita
+		(type INSTANCE)
+;+		(allowed-classes UOC_Scolarita)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot madre_nome
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot dataChiusura
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_paziente_glo
+		(type INSTANCE)
+;+		(allowed-classes GLO_Paziente)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_percorsi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+		(create-accessor read-write))
+	(single-slot consenso_incontro_professionisti_sanita
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot fratelli_e_altri_conviventi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_visite
+		(type INSTANCE)
+;+		(allowed-classes UOC_Visita)
+		(create-accessor read-write))
+	(single-slot numero_cartella
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot padre_scolarita
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ore_settimanali
+		(type SYMBOL)
+		(allowed-values 1 2 3 piu_di_tre)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_diagnosi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Diagnosi)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_consenso_dati_peronali
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot stato_civile_genitori
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_consenso_riprese
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot inviante_AUSL_bologna
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot prosposta_osservazione
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot consenso_incontro_scuola
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot trattamenti
+		(type INSTANCE)
+;+		(allowed-classes UOC_Trattamento)
+		(create-accessor read-write))
+	(single-slot pediatra_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_padre
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot referente_asl_riferimenti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Diagnosi
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot icd10
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_diagnosi_principale_codice
+		(type SYMBOL)
+		(allowed-values Ritardo_mentale_F70-79 Disturbo_specifico_apprendimento_F81 Disturbo_specifico_linguaggio_F80 Sindrome_di_down_Q90 Ritardo_psicomotorio_F82 Disturbo_coordinazione_F82 Altro Disturbi_evolutivi_globali_F84 Non_diagnosticato)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot diagnosi_principale_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comorbidita_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot comorbidita_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_diagnosi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Anamnesi
+	(is-a USER)
+	(role concrete)
+	(single-slot uoc_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_utilizzo_materiale_iconico
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_patologie_uditive_accertate
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_relazione_con_pari
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_relazione_con_adulti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ritmo_sonno_veglia
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_familiare
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_abilita_grossomotorie
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_comparsa_sorriso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_psicomotorio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_patologie_accertate
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_lallazione_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_stazione_eretta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_scolastico_pregresso
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_terapia_farmacologica
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_note_parto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_tipo_gesti_significativi
+		(type SYMBOL)
+		(allowed-values deiettico referenziale)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot alimentazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_vocalizzo_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot controllo_sfinterico_da_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_presidi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_esposto_a_bilinguismo
+		(type SYMBOL)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sezione_sviluppo_sociale_relazionale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_durata_gravidanza
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot percettivo_tattile_gustativo_olfattivo_problematiche
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_scende_scale_come
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_agapar_1_minuto
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_seduto_senza_appoggio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_anamnesi
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot percettivo_esami_audiometrici
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot uoc_parto
+		(type SYMBOL)
+		(allowed-values eutocico distocico dopo_gravidanza cesareo_urgenza cesareo_programmato indotto spontaneo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot psicomotorio_capo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot controllo_sfinterico
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_spostamento_al_tappeto
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_parola_frase
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot percettivo_visivo_riconosce
+		(type SYMBOL)
+		(allowed-values visi luoghi giochi dislivelli pendenze)
+		(create-accessor read-write))
+	(single-slot sociale_note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_patologica
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_comprensione_richieste_semplici
+		(type SYMBOL)
+		(allowed-values buona sufficiente scarsa)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_anamnesi_fisiologica
+;+		(comment "da fare sezione")
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_comprensibile_estranei
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_scende_scale
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_agapar_5_minuto
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_gioco
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_modalita_separazione_caregiver
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_visivo_esami
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_linguaggio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percettivo_presidi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_prime_parole_mesi
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_gravidanza
+		(type SYMBOL)
+		(allowed-values normale patologica)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sezione_svulippo_percettivo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_scolastico_attuale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_presenza_gesti_significativi
+		(type SYMBOL)
+		(allowed-values buona sufficiente scarsa)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sezione_percorso_scolastico
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot psicomotorio_cammino
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_peso_alla_nascita
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot sociale_autoregolazione_comportamentale
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot sociale_consolabilita_primi_anni
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot linguaggio_parole_rispetto_coetanei
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Percorso
+	(is-a USER)
+	(role concrete)
+	(single-slot inverse_of_per_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Lista_Attesa)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot problemi_clinici
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma1_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_data_inizio
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot icf
+		(type INSTANCE)
+;+		(allowed-classes UOC_Eval_Icf)
+		(create-accessor read-write))
+	(single-slot uoc_risultati_ottenuti
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot relazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_accesso_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma2_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot miglioramento
+		(type SYMBOL)
+		(allowed-values SI NO)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma3_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma4_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot uoc_data_fine
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot obiettivo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(multislot tipo_percorso
+		(type SYMBOL)
+		(allowed-values logopedico musicoterapico neuropsicomotorio psicologico educativo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass UOC_Visita
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot per_cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot refertazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot iter_visita
+		(type SYMBOL)
+		(allowed-values trattamento valutazione)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Scolarita
+	(is-a USER)
+	(role concrete)
+	(single-slot glo_scolarita_classe
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot insegnati_riferimento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot anno
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot glo_scolarita_scuola
+		(type SYMBOL)
+		(allowed-values nido materna elementare media_inferiore media_superiore altro)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_scolarita
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot glo_scolarita_altro
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Allegato
+	(is-a USER)
+	(role concrete)
+	(single-slot titolo
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot attachment
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot ref_instance
+		(type INTEGER)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot supporto
+		(type SYMBOL)
+		(allowed-values documento audio video foto)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot descrizione_breve
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot di_cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot real_attachment_2
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot real_attachment_1
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot ref_class
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot real_attachment_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot metadati
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Lista_Attesa
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot percorso_iniziato
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot priorita
+		(type SYMBOL)
+		(allowed-values urgente programmata)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_appuntamento
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot tipo_prenotazione
+		(type SYMBOL)
+		(allowed-values intervento reinoculo controllo)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot per_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data_richiesta
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot tipo_percorso
+		(type SYMBOL)
+		(allowed-values logopedico musicoterapico neuropsicomotorio psicologico educativo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write)))
+
+(defclass UOC_Eval_Icf
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot di_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot capacita
+		(type SYMBOL)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot performance
+		(type SYMBOL)
+		(allowed-values 0 1 2 3 4 8 9)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot item
+		(type SYMBOL)
+		(allowed-values d4500_Camminare_per_meno_di_un_km d4501_Camminare_per_piu_di_un_km%00 Camminare Interazioni_interpersonali_complesse%00 D7202_Regolare_comportamenti_nelle_relazioni%00)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Diario_Clinico
+	(is-a USER)
+	(role concrete)
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot inverse_of_diario_clinico
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot osservazione
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Proposta_Osservazione
+	(is-a USER)
+	(role concrete)
+	(single-slot sintesi_referto_valutazione_esterna
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot osservazione0_3
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma_accettazione_il
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot accesso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot referto_valutazione_esterna
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot obiettivo
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot firma3
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma4
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot valutazione_esterna
+		(type SYMBOL)
+		(allowed-values FALSE TRUE)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot firma1
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot interventi_proposti
+		(type SYMBOL)
+		(allowed-values neuropsicologico psicologico fisioterapico logopedico musicoterapico psicomotorio educativo)
+		(cardinality 1 ?VARIABLE)
+		(create-accessor read-write))
+	(single-slot firma2
+		(type INSTANCE)
+;+		(allowed-classes UOC_Operatore)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Operatore
+	(is-a USER)
+	(role concrete)
+	(multislot inverse_of_firma1
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+		(create-accessor read-write))
+	(multislot inverse_of_firma2
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+		(create-accessor read-write))
+	(multislot inverse_of_firma3
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+		(create-accessor read-write))
+	(multislot inverse_of_firma4_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+		(create-accessor read-write))
+	(multislot inverse_of_firma4
+		(type INSTANCE)
+;+		(allowed-classes UOC_Proposta_Osservazione)
+		(create-accessor read-write))
+	(multislot inverse_of_firma2_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+		(create-accessor read-write))
+	(single-slot user_name
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma1_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+		(create-accessor read-write))
+	(single-slot user_user_id
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot user_email
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(multislot inverse_of_firma3_percorso
+		(type INSTANCE)
+;+		(allowed-classes UOC_Percorso)
+		(create-accessor read-write))
+	(single-slot user_phone_number
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write)))
+
+(defclass UOC_Trattamento
+	(is-a USER)
+	(role concrete)
+	(single-slot note
+		(type STRING)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
+	(single-slot data
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot tipo_visita
+		(type SYMBOL)
+		(allowed-values logopedica psicomotoria fisioterapica intervento_educativo neuropsicologica percorsi_autonomia psicologica neuropischiatrica)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot cartella
+		(type INSTANCE)
+;+		(allowed-classes UOC_Accesso)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot refertazione
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot stato
+		(type SYMBOL)
+		(allowed-values presente assente)
+		(default presente)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot individuale_gruppo
+		(type SYMBOL)
+		(allowed-values individuale di_gruppo)
+		(default individuale)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))

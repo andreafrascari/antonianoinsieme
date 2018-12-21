@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="npia" default="1_localDeploy">
+    <property environment="env"/>
+    <property file="build.properties"/>
+    <property name="serverHome" value="${env.TOMCAT_HOME}"/>
+	<property name="serena.warname" value="${ant.project.name}" />
+
+    <property name="applicationProject" value="Serena_Application"/>
+    <import file="../${applicationProject}/build.xml"/>
+    <target name="0_createApplicationSkeleton" description="Crea lo scheletro dell'applicazione">
+        <createSerenaApplicationSkeleton projectname="${ant.project.name}" webserviceClassNames="${webserviceClassNames}"/>
+    </target>
+    <target name="0_createWsApplicationSkeleton" description="Crea la configurazione dei webservice">
+        <createWsApplicationSkeleton projectname="${ant.project.name}"/>
+    </target>
+    <target name="1_localDeploy" description="Effettua il deploy in locale dell'applicazione">
+        <localDeploySerenaApplication projectName="${ant.project.name}" serverHome="${serverHome}"/>
+        <localDeploySerenaBirtReportModule projectName="${ant.project.name}" serverHome="${serverHome}"/>
+        <localDeploySerenaAnagraficaModule projectName="${ant.project.name}" serverHome="${serverHome}"/>
+      <!--  <binding/>-->
+    </target>
+    <target name="2_localClean" description="Cancella dal server la cartella dell'applicazione">
+        <localCleanSerenaApplication projectName="${ant.project.name}" serverHome="${serverHome}"/>
+    </target>
+    <target name="3_localRedeploy" depends="2_localClean, 1_localDeploy" description="Effettua il deploy in locale da zero dell'applicazione"/>
+    <target name="4_localDeployAppDir" description="Cancella dal server la cartella dell'applicazione">
+        <localDeploySerenaCoreAppDir projectName="${ant.project.name}" serverHome="${serverHome}"/>
+        <localDeploySpecificAppDir projectName="${ant.project.name}" serverHome="${serverHome}"/>
+    </target>
+	<target name="5_war" depends="1_localDeploy" description="Crea il war dell'applicazione">
+			<input validargs="OK" defaultvalue="OK">Pronti per il WAR?</input>
+			<localWar projectName="${ant.project.name}" serverHome="${serverHome}" warName="${serena.warname}" />		
+	</target>
+</project>
